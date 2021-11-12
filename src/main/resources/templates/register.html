@@ -1,30 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Courses Registration</title>
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        th, td {
-            border-bottom: 1px solid #ddd;
-            padding: 10px 5px;
-            text-align: left;
-        }
-    </style>
+    <title>Register students to courses</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Register students to courses">
+    <link rel="stylesheet" href="css/mystyle.css">
 </head>
 <body>
+<center>
 <form action="/wizard/register" method="post">
     <input name="idWizard" th:value="${wizard.id}" type="hidden">
     <h1 th:text="|${wizard.firstName} ${wizard.lastName}|"></h1>
@@ -52,6 +36,7 @@
     </tbody>
 </table>
 <br>
-<a href="/">Return to students list</a>
+<a class="glow-on-hover" href="/">Return to index</a>
+</center>
 </body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>List of courses</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="List of courses">
+  <link rel="stylesheet" href="css/mystyle.css">
+</head>
+<body>
+<center>
+  <h1>Harry Potter</h1>
+  <div><h2>The list of courses</h2></div>
+<table>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>name</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="course : ${courses}">
+    <td th:text="${course.id}">id</td>
+    <td th:text="${course.name}">name</td>
+    <td><a class="glow-on-hover" th:href="@{/courseStudents(idCourse=${course.id})}">Students in this course</a></td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<table>
+  <tr>
+    <td>
+      <form method="get" action="/">
+        <button class="glow-on-hover" type="submit">HOME</button>
+      </form>
+    </td>
+    <td>
+      <form method="get" action="/wizard">
+        <button class="glow-on-hover" type="submit">WIZARDS</button>
+      </form>
+    </td>
+   </tr>
+</table>
+  <br>
+</center>
+</body>
+</html>

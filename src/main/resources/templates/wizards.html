@@ -2,30 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Wizard List</title>
+    <title>The lis of wizards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="The list of wizards">
+    <link rel="stylesheet" href="css/mystyle.css">
 </head>
-<style>
-    table {
-        border-collapse: collapse;
-    }
-
-    th {
-        background-color: #4CAF50;
-        color: white;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    th, td {
-        border-bottom: 1px solid #ddd;
-        padding: 10px 5px;
-        text-align: left;
-    }
-</style>
 <body>
-<h3>Students:</h3>
+<center>
+    <h1>Harry Potter</h1>
+    <div><h2>The list of wizards</h2></div>
 <table>
     <thead>
     <tr>
@@ -48,9 +33,24 @@
         <td th:text="${wizard.birthPlace}">birth place</td>
         <td th:text="${wizard.biography}">biography</td>
         <td th:text="${wizard.muggle}">muggle</td>
-        <td><a th:href="@{/wizard/register(idWizard=${wizard.id})}">courses</a></td>
+        <td><a class="glow-on-hover" th:href="@{/wizard/register(idWizard=${wizard.id})}">Register courses</a></td>
     </tr>
     </tbody>
 </table>
+    <table>
+        <tr>
+            <td>
+                <form method="get" action="/">
+                    <button class="glow-on-hover" type="submit">HOME</button>
+                </form>
+            </td>
+            <td>
+                <form method="get" action="/course">
+                    <button class="glow-on-hover" type="submit">COURSES</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</center>
 </body>
 </html>

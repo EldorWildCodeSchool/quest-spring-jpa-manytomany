@@ -27,12 +27,19 @@ public class WizardController {
     private WizardRepository wizardRepository;
 
     @GetMapping("/")
+    public String getIndex() {
+
+        return "index";
+    }
+
+    @GetMapping("/wizard")
     public String getWizards(Model out) {
 
         out.addAttribute("wizards", wizardRepository.findAll());
 
         return "wizards";
     }
+
 
     @GetMapping("/wizard/register")
     public String getRegister(Model out,
