@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
   <title>List of courses</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +23,7 @@
   <tr th:each="course : ${courses}">
     <td th:text="${course.id}">id</td>
     <td th:text="${course.name}">name</td>
-    <td><a class="glow-on-hover" th:href="@{/courseStudents(idCourse=${course.id})}">Students in this course</a></td>
+    <td><a class="glow-on-hover" th:href="@{/students(idCourse=${course.id})}">Students in this course</a></td>
   </tr>
   </tbody>
 </table>

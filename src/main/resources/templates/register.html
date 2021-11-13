@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:title" content="Register students to courses">
-    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="/css/mystyle.css">
 </head>
 <body>
 <center>
 <form action="/wizard/register" method="post">
     <input name="idWizard" th:value="${wizard.id}" type="hidden">
     <h1 th:text="|${wizard.firstName} ${wizard.lastName}|"></h1>
-    <label for="course">Register a course:</label>
+    <div><h2><label for="course">Register a course:</label></h2></div>
     <select id="course" name="idCourse">
         <option th:each="course : ${allCourses}" th:text="${course.name}"
                 th:value="${course.id}">wizard name
@@ -36,7 +36,25 @@
     </tbody>
 </table>
 <br>
-<a class="glow-on-hover" href="/">Return to index</a>
+    <table>
+        <tr>
+            <td>
+                <form method="get" action="/">
+                    <button class="glow-on-hover" type="submit">HOME</button>
+                </form>
+            </td>
+            <td>
+                <form method="get" action="/wizard">
+                    <button class="glow-on-hover" type="submit">WIZARDS</button>
+                </form>
+            </td>
+            <td>
+                <form method="get" action="/course">
+                    <button class="glow-on-hover" type="submit">COURSES</button>
+                </form>
+            </td>
+        </tr>
+    </table>
 </center>
 </body>
 </html>

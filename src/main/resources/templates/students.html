@@ -11,8 +11,7 @@
 <center>
     <h1>Harry Potter</h1>
     <div><h2>The lis of students in this course</h2></div>
-    <h3>Course</h3>
-    <h3 th:text="|${wizard.firstName} ${wizard.lastName}|"></h3>
+    <h2 th:text="|${course.name}"></h2>
     <table>
         <thead>
         <tr>
@@ -35,7 +34,6 @@
             <td th:text="${wizard.birthPlace}">birth place</td>
             <td th:text="${wizard.biography}">biography</td>
             <td th:text="${wizard.muggle}">muggle</td>
-            <td><a class="glow-on-hover" th:href="@{/wizard/register(idWizard=${wizard.id})}">Register courses</a></td>
         </tr>
         </tbody>
     </table>
@@ -44,6 +42,11 @@
             <td>
                 <form method="get" action="/">
                     <button class="glow-on-hover" type="submit">HOME</button>
+                </form>
+            </td>
+            <td>
+                <form method="get" action="/wizard">
+                    <button class="glow-on-hover" type="submit">WIZARDS</button>
                 </form>
             </td>
             <td>
