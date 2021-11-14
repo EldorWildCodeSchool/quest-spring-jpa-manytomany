@@ -5,6 +5,17 @@ html *
    color: #f3e6e6;
 }
 
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #E20074;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 Body {
     font-family: 'Harry Potter', sans-serif;
     background: rgb(0, 0, 0);
